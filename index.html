@@ -620,6 +620,18 @@
     <!-- Toast Container -->
     <div class="toast-container" id="toastContainer"></div>
 
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // REPLACE these with your actual EmailJS credentials
+        const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+        const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+        (function() {
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

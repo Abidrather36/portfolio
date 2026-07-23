@@ -463,13 +463,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.innerHTML = '<span class="loading-spinner"></span> Sending...';
                 btn.disabled = true;
 
-                // Simulate form submission delay
-                setTimeout(() => {
-                    showToast('Message sent successfully! I will get back to you soon.');
-                    form.reset();
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                }, 1500);
+                // Prepare template parameters matching EmailJS template
+                const templateParams = {
+                    from_name: form.querySelector('#name').value,
+                    from_email: form.querySelector('#email').value,
+                    subject: form.querySelector('#subject').value,
+                    message: form.querySelector('#message').value,
+                };
+
+                // Send email via EmailJS
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                    .then(() => {
+                        showToast('Message sent successfully! I will get back to you soon. ✉️');
+                        form.reset();
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    })
+                    .catch((error) => {
+                        console.error('EmailJS Error:', error);
+                        showToast('⚠️ Failed to send message. Please email me directly at abidrather40@yahoo.in');
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    });
             }
         });
 
