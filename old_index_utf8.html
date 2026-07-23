@@ -1,0 +1,639 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abid Rather — Full Stack .NET Developer with 2+ years building production systems with ASP.NET Core, React, TypeScript, and Clean Architecture. Based in Bengaluru, India.">
+    <meta name="keywords" content="Abid Rather, Full Stack Developer, .NET Developer, ASP.NET Core, React, TypeScript, Portfolio, Software Engineer, Bengaluru">
+    <meta name="author" content="Abid Rather">
+    <meta property="og:title" content="Abid Rather — Full Stack .NET Developer">
+    <meta property="og:description" content="Full Stack .NET Developer crafting production-grade systems with ASP.NET Core, React, and Clean Architecture.">
+    <meta property="og:type" content="website">
+    <title>Abid Rather — Full Stack .NET Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/bold/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">AR</span>
+                <span class="logo-bracket"> /&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Let's Talk</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <canvas class="hero-particles" id="heroParticles"></canvas>
+        <div class="hero-bg-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-greeting animate-on-scroll">
+                    <span class="greeting-line"></span>
+                    <span class="greeting-text">Hello, I'm</span>
+                </div>
+                <h1 class="hero-name animate-on-scroll">
+                    Abid <span class="gradient-text">Rather</span>
+                </h1>
+                <div class="hero-title animate-on-scroll">
+                    <span class="title-prefix">I'm a</span>
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="typing-cursor">|</span>
+                </div>
+                <p class="hero-description animate-on-scroll">
+                    Full Stack .NET Developer with 2+ years delivering production systems across the full stack — 
+                    ASP.NET Core Web APIs, Clean Architecture backends, and React/TypeScript frontends. 
+                    Sole engineer on SalesTern end-to-end; currently migrating legacy platforms to .NET 9 
+                    and building payment & auth integrations for live SaaS products.
+                </p>
+                <div class="hero-actions animate-on-scroll">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="ph ph-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Get In Touch</span>
+                        <i class="ph ph-envelope-simple"></i>
+                    </a>
+                </div>
+                <div class="hero-social animate-on-scroll">
+                    <a href="https://github.com/Abidrather36" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <i class="ph ph-github-logo"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/abidrather" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <i class="ph ph-linkedin-logo"></i>
+                    </a>
+                    <a href="mailto:abidrather40@yahoo.in" class="social-link" aria-label="Email">
+                        <i class="ph ph-envelope-simple"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual animate-on-scroll">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-ring"></div>
+                    <div class="hero-image-container">
+                        <div class="hero-avatar">
+                            <span class="avatar-initials">AR</span>
+                        </div>
+                    </div>
+                    <div class="floating-badge badge-1">
+                        <i class="ph-fill ph-code"></i>
+                        <span>.NET</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="ph-fill ph-atom"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="floating-badge badge-3">
+                        <i class="ph-fill ph-database"></i>
+                        <span>SQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator animate-on-scroll">
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag"><i class="ph ph-user"></i> About Me</span>
+                <h2 class="section-title">Turning Ideas Into <span class="gradient-text">Production Code</span></h2>
+                <p class="section-subtitle">A passionate developer who thrives on building full-stack solutions from the ground up</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content animate-on-scroll">
+                    <p>
+                        I'm a <strong>Full Stack .NET Developer</strong> based in Bengaluru, India, with a deep passion for 
+                        building end-to-end production systems. With expertise spanning <strong>ASP.NET Core Web APIs</strong>, 
+                        <strong>Clean Architecture</strong> backends, and <strong>React/TypeScript</strong> frontends, I deliver 
+                        solutions that are both robust and user-friendly.
+                    </p>
+                    <p>
+                        As the sole engineer on <strong>SalesTern</strong>, I owned everything from architecture design to 
+                        deployment — proving my ability to deliver complete products independently. I'm currently tackling 
+                        exciting challenges like migrating legacy .NET Framework platforms to <strong>.NET 9</strong> and 
+                        integrating <strong>Stripe payments</strong> and <strong>Google OAuth</strong> into live SaaS products.
+                    </p>
+                    <p>
+                        I believe in writing clean, maintainable code that follows <strong>SOLID principles</strong> and 
+                        industry best practices. Every project I touch gets the attention to detail it deserves.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="ph-fill ph-check-circle"></i>
+                            <span>Clean Architecture Advocate</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="ph-fill ph-check-circle"></i>
+                            <span>End-to-End Product Delivery</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="ph-fill ph-check-circle"></i>
+                            <span>Performance-Focused Development</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="ph-fill ph-check-circle"></i>
+                            <span>Agile & Collaborative Mindset</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats animate-on-scroll stagger">
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i class="ph-fill ph-briefcase"></i></div>
+                        <div class="stat-number count-up" data-target="2">0</div>
+                        <div class="stat-suffix">+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i class="ph-fill ph-rocket-launch"></i></div>
+                        <div class="stat-number count-up" data-target="3">0</div>
+                        <div class="stat-suffix">+</div>
+                        <div class="stat-label">Production Projects</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i class="ph-fill ph-buildings"></i></div>
+                        <div class="stat-number count-up" data-target="2">0</div>
+                        <div class="stat-suffix"></div>
+                        <div class="stat-label">Companies Worked</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i class="ph-fill ph-stack"></i></div>
+                        <div class="stat-number count-up" data-target="15">0</div>
+                        <div class="stat-suffix">+</div>
+                        <div class="stat-label">Technologies Used</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag"><i class="ph ph-wrench"></i> Technical Arsenal</span>
+                <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
+                <p class="section-subtitle">The tools and technologies I use to bring ideas to life</p>
+            </div>
+            <div class="skills-grid">
+                <!-- Languages -->
+                <div class="skill-group glass-card animate-on-scroll">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="ph-fill ph-code"></i></div>
+                        <h3 class="skill-group-title">Languages</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+                </div>
+
+                <!-- .NET Ecosystem -->
+                <div class="skill-group glass-card animate-on-scroll">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="ph-fill ph-diamonds-four"></i></div>
+                        <h3 class="skill-group-title">.NET Ecosystem</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag accent">ASP.NET Core</span>
+                        <span class="skill-tag accent">Web API</span>
+                        <span class="skill-tag accent">EF Core</span>
+                        <span class="skill-tag accent">ADO.NET</span>
+                        <span class="skill-tag accent">Dapper</span>
+                        <span class="skill-tag accent">xUnit</span>
+                        <span class="skill-tag accent">nUnit</span>
+                        <span class="skill-tag accent">JWT</span>
+                        <span class="skill-tag accent">REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="skill-group glass-card animate-on-scroll">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="ph-fill ph-monitor"></i></div>
+                        <h3 class="skill-group-title">Frontend</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag secondary">React.js</span>
+                        <span class="skill-tag secondary">Next.js</span>
+                        <span class="skill-tag secondary">TypeScript</span>
+                        <span class="skill-tag secondary">Material UI</span>
+                        <span class="skill-tag secondary">Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="skill-group glass-card animate-on-scroll">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="ph-fill ph-database"></i></div>
+                        <h3 class="skill-group-title">Database</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">SSMS</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & Tools -->
+                <div class="skill-group glass-card animate-on-scroll">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="ph-fill ph-cloud"></i></div>
+                        <h3 class="skill-group-title">Cloud & Tools</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure Functions</span>
+                        <span class="skill-tag">Blob Storage</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Swagger</span>
+                    </div>
+                </div>
+
+                <!-- Architecture -->
+                <div class="skill-group glass-card animate-on-scroll">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="ph-fill ph-tree-structure"></i></div>
+                        <h3 class="skill-group-title">Architecture & DevOps</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag accent">Clean Architecture</span>
+                        <span class="skill-tag accent">CQRS</span>
+                        <span class="skill-tag accent">SOLID</span>
+                        <span class="skill-tag accent">Docker</span>
+                        <span class="skill-tag accent">Git/GitHub</span>
+                        <span class="skill-tag accent">Agile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag"><i class="ph ph-briefcase"></i> Career Journey</span>
+                <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+                <p class="section-subtitle">My professional journey building production-grade software</p>
+            </div>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <div class="timeline-company">
+                                <h3>Antern Technologies</h3>
+                                <span class="timeline-role">Software Engineer / Associate</span>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date"><i class="ph ph-calendar"></i> Jan 2024 – Present</span>
+                                <span class="timeline-location"><i class="ph ph-map-pin"></i> Bengaluru</span>
+                            </div>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Served as <strong>sole full-stack engineer</strong> on SalesTern — owned architecture, development, and deployment end-to-end from zero to production.</li>
+                            <li>Designed and shipped a <strong>JWT-secured ASP.NET Core Web API</strong> with granular RBAC, enforcing access control across all endpoints and user roles.</li>
+                            <li>Built a modular <strong>React + Material UI</strong> frontend with reusable component architecture, cutting UI development time on new features through shared component reuse.</li>
+                            <li>Automated lead follow-up workflows and email notifications, eliminating manual outreach steps for the sales team's daily pipeline management.</li>
+                            <li>Delivered fully responsive layouts across desktop, tablet, and mobile — <strong>zero separate mobile codebase</strong>.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>ASP.NET Core</span>
+                            <span>React</span>
+                            <span>JWT</span>
+                            <span>Material UI</span>
+                            <span>SQL Server</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <div class="timeline-company">
+                                <h3>Logichub Software Solutions</h3>
+                                <span class="timeline-role">Software Developer</span>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date"><i class="ph ph-calendar"></i> Jul 2023 – Dec 2023</span>
+                                <span class="timeline-location"><i class="ph ph-map-pin"></i> Srinagar</span>
+                            </div>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Built and debugged <strong>production-grade CRUD APIs</strong> using ASP.NET Core, ADO.NET, and SQL Server within a live client delivery environment.</li>
+                            <li>Gained hands-on fluency in <strong>.NET Core middleware pipelines</strong> and routing, contributing working code within the first two weeks of onboarding.</li>
+                            <li>Participated consistently in <strong>Agile ceremonies</strong> (sprint planning, stand-ups) across a 6-month delivery cycle.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>ASP.NET Core</span>
+                            <span>ADO.NET</span>
+                            <span>SQL Server</span>
+                            <span>Agile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag"><i class="ph ph-folder-notch-open"></i> Featured Work</span>
+                <h2 class="section-title">Projects I've <span class="gradient-text">Built</span></h2>
+                <p class="section-subtitle">Real-world applications I've architected, developed, and shipped</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1: SalesTern -->
+                <div class="project-card glass-card tilt-card animate-on-scroll">
+                    <div class="project-card-header">
+                        <div class="project-icon"><i class="ph-fill ph-chart-line-up"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/Abidrather36" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">SalesTern</h3>
+                    <p class="project-role"><i class="ph ph-user-gear"></i> Full Stack Developer</p>
+                    <p class="project-date"><i class="ph ph-calendar"></i> Sep 2024</p>
+                    <ul class="project-description">
+                        <li>Built data-driven analytics dashboards giving stakeholders real-time pipeline visibility — replacing manual reporting.</li>
+                        <li>Sole engineer owning architecture, development, and deployment end-to-end from zero to production.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>ASP.NET Core</span>
+                        <span>React</span>
+                        <span>JWT</span>
+                        <span>RBAC</span>
+                        <span>Material UI</span>
+                        <span>SQL Server</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: MySkillTest -->
+                <div class="project-card glass-card tilt-card animate-on-scroll">
+                    <div class="project-card-header">
+                        <div class="project-icon"><i class="ph-fill ph-graduation-cap"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/Abidrather36" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">MySkillTest</h3>
+                    <p class="project-role"><i class="ph ph-user-gear"></i> Migration Engineer / .NET Core Developer</p>
+                    <p class="project-date"><i class="ph ph-calendar"></i> Nov 2025 – Present</p>
+                    <ul class="project-description">
+                        <li>Migrated platform from .NET Framework 4.3 (OWIN) → .NET 9, eliminating 6 major versions of framework debt.</li>
+                        <li>Replaced OWIN session auth with JWT-based stateless authentication, enabling horizontal scaling without sticky sessions.</li>
+                        <li>Refactored monolith into Clean Architecture (4-layer), making each layer independently testable and deployable.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>.NET 9</span>
+                        <span>Clean Architecture</span>
+                        <span>JWT</span>
+                        <span>CQRS</span>
+                        <span>Migration</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: StreamlineAcademies -->
+                <div class="project-card glass-card tilt-card animate-on-scroll">
+                    <div class="project-card-header">
+                        <div class="project-icon"><i class="ph-fill ph-credit-card"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/Abidrather36" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">StreamlineAcademies</h3>
+                    <p class="project-role"><i class="ph ph-user-gear"></i> Implementation Engineer</p>
+                    <p class="project-date"><i class="ph ph-calendar"></i> Nov 2025 – Present</p>
+                    <ul class="project-description">
+                        <li>Integrated Google OAuth 2.0, replacing password-based onboarding and reducing user drop-off at account creation.</li>
+                        <li>Implemented Stripe payment gateway with webhook automation, enabling real-time subscription lifecycle events without manual intervention.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Google OAuth 2.0</span>
+                        <span>Stripe</span>
+                        <span>Webhooks</span>
+                        <span>ASP.NET Core</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section education" id="education">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag"><i class="ph ph-graduation-cap"></i> Education</span>
+                <h2 class="section-title">Academic <span class="gradient-text">Background</span></h2>
+                <p class="section-subtitle">The foundation that shaped my technical expertise</p>
+            </div>
+            <div class="education-grid">
+                <div class="education-card glass-card animate-on-scroll">
+                    <div class="education-icon"><i class="ph-fill ph-graduation-cap"></i></div>
+                    <div class="education-content">
+                        <h3>MSc. Information Technology</h3>
+                        <p class="education-institution"><i class="ph ph-buildings"></i> University of Kashmir</p>
+                        <div class="education-meta">
+                            <span class="education-year"><i class="ph ph-calendar"></i> 2022</span>
+                            <span class="education-grade"><i class="ph ph-star"></i> 8.13 CGPA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="education-card glass-card animate-on-scroll">
+                    <div class="education-icon"><i class="ph-fill ph-book-open-text"></i></div>
+                    <div class="education-content">
+                        <h3>Bachelor of Computer Applications (BCA)</h3>
+                        <p class="education-institution"><i class="ph ph-buildings"></i> University of Kashmir</p>
+                        <div class="education-meta">
+                            <span class="education-year"><i class="ph ph-calendar"></i> 2017</span>
+                            <span class="education-grade"><i class="ph ph-star"></i> 6.3 CGPA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag"><i class="ph ph-chat-circle-dots"></i> Get In Touch</span>
+                <h2 class="section-title">Let's Build Something <span class="gradient-text">Together</span></h2>
+                <p class="section-subtitle">Have a project in mind or want to discuss opportunities? I'd love to hear from you.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-card glass-card">
+                        <div class="contact-card-icon"><i class="ph-fill ph-envelope-simple"></i></div>
+                        <div class="contact-card-content">
+                            <h4>Email</h4>
+                            <a href="mailto:abidrather40@yahoo.in">abidrather40@yahoo.in</a>
+                        </div>
+                    </div>
+                    <div class="contact-card glass-card">
+                        <div class="contact-card-icon"><i class="ph-fill ph-phone"></i></div>
+                        <div class="contact-card-content">
+                            <h4>Phone</h4>
+                            <a href="tel:+919596574933">+91-9596574933</a>
+                        </div>
+                    </div>
+                    <div class="contact-card glass-card">
+                        <div class="contact-card-icon"><i class="ph-fill ph-map-pin"></i></div>
+                        <div class="contact-card-content">
+                            <h4>Location</h4>
+                            <span>Bengaluru, India</span>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <h4>Find Me On</h4>
+                        <div class="contact-social-links">
+                            <a href="https://github.com/Abidrather36" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="GitHub">
+                                <i class="ph ph-github-logo"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://linkedin.com/in/abidrather" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="LinkedIn">
+                                <i class="ph ph-linkedin-logo"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper animate-on-scroll">
+                    <form class="contact-form glass-card" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Discussion" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <i class="ph ph-paper-plane-tilt"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-text">AR</span>
+                        <span class="logo-bracket"> /&gt;</span>
+                    </a>
+                    <p>Full Stack .NET Developer building production-grade systems.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/Abidrather36" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                    <a href="https://linkedin.com/in/abidrather" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                    <a href="mailto:abidrather40@yahoo.in" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Abid Rather. Crafted with passion & clean code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="ph ph-caret-up"></i>
+    </button>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // REPLACE these with your actual EmailJS credentials
+        const EMAILJS_PUBLIC_KEY = 'bdu1iU8D-vhuI8bub';
+        const EMAILJS_SERVICE_ID = 'service_joo3i1k';
+        const EMAILJS_TEMPLATE_ID = 'template_ouzh1ee';
+
+        (function() {
+            emailjs.init({
+                publicKey: EMAILJS_PUBLIC_KEY,
+            });
+        })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
