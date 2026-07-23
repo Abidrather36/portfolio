@@ -1602,6 +1602,29 @@ img { max-width: 100%; display: block; }
   gap: 10px;
 }
 
+.toast {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast.fade-in {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 /* =============================================
    Responsive Design
    ============================================= */
