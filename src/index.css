@@ -681,7 +681,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.floating-badge i {
+.floating-badge svg {
   font-size: 1rem;
   color: var(--accent);
 }
