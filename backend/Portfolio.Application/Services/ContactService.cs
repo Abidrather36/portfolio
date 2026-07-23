@@ -20,6 +20,7 @@ public class ContactService
             throw new ArgumentException("Email and Message are required.");
         }
 
+        
         await _emailService.SendContactEmailAsync(message);
     }
 }
