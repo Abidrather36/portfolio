@@ -22,7 +22,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowPortfolioApp", policy =>
     {
-        policy.WithOrigins("http://localhost:4000", "http://localhost:3000", "https://abidrather36.github.io")
+        policy.AllowAnyOrigin()
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
