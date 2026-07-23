@@ -472,7 +472,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 // Send email via EmailJS
-                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, {
+                    publicKey: EMAILJS_PUBLIC_KEY,
+                })
                     .then(() => {
                         showToast('Message sent successfully! I will get back to you soon. ✉️');
                         form.reset();

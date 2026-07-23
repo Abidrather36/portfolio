@@ -629,7 +629,9 @@
         const EMAILJS_TEMPLATE_ID = 'template_ouzh1ee';
 
         (function() {
-            emailjs.init(EMAILJS_PUBLIC_KEY);
+            emailjs.init({
+                publicKey: EMAILJS_PUBLIC_KEY,
+            });
         })();
     </script>
     <script src="script.js"></script>
