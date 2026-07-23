@@ -41,7 +41,7 @@ export function Contact() {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/api/contact', {
+            const response = await fetch('http://localhost:5002/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
