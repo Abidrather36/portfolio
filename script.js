@@ -465,10 +465,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Prepare template parameters matching EmailJS template
                 const templateParams = {
-                    from_name: form.querySelector('#name').value,
-                    from_email: form.querySelector('#email').value,
+                    name: form.querySelector('#name').value,
+                    email: form.querySelector('#email').value,
                     subject: form.querySelector('#subject').value,
                     message: form.querySelector('#message').value,
+                    time: new Date().toLocaleString()
                 };
 
                 // Send email via EmailJS
