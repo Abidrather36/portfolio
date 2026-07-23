@@ -21,9 +21,9 @@ export function Hero() {
     useEffect(() => {
         const phrases = [
             "Full Stack Developer.",
-            ".NET Core Specialist.",
-            "React Enthusiast.",
-            "Clean Architecture Advocate."
+            "ASP.NET Core Expert.",
+            "React Developer.",
+            "Clean Architecture Enthusiast."
         ];
         
         let currentPhraseIndex = 0;

@@ -1,14 +1,15 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { FolderOpen, ChartLineUp, GithubLogo, UserGear, Calendar, GraduationCap, CreditCard } from '@phosphor-icons/react';
+import { useRef } from 'react';
 
-export function Projects() {
-    const headerRef = useScrollAnimation();
-    const proj1Ref = useScrollAnimation();
-    const proj2Ref = useScrollAnimation();
-    const proj3Ref = useScrollAnimation();
+function TiltCard({ children, animationRef }) {
+    const cardRef = useRef(null);
+    const shineRef = useRef(null);
 
     const handleMouseMove = (e) => {
-        const card = e.currentTarget;
+        const card = cardRef.current;
+        if (!card) return;
+
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -19,13 +20,58 @@ export function Projects() {
         const rotateX = ((y - centerY) / centerY) * -10;
         const rotateY = ((x - centerX) / centerX) * 10;
         
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+        if (shineRef.current) {
+            shineRef.current.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 60%)`;
+        }
     };
 
-    const handleMouseLeave = (e) => {
-        const card = e.currentTarget;
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+    const handleMouseLeave = () => {
+        const card = cardRef.current;
+        if (card) {
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        }
+        if (shineRef.current) {
+            shineRef.current.style.background = 'none';
+        }
     };
+
+    return (
+        <div 
+            className="project-card glass-card tilt-card animate-on-scroll" 
+            ref={(node) => {
+                cardRef.current = node;
+                if (animationRef) animationRef.current = node;
+            }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ position: 'relative', overflow: 'hidden' }}
+        >
+            {children}
+            <div 
+                ref={shineRef} 
+                className="shine-effect" 
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    pointerEvents: 'none',
+                    transition: 'background 0.1s ease',
+                    zIndex: 2
+                }}
+            />
+        </div>
+    );
+}
+
+export function Projects() {
+    const headerRef = useScrollAnimation();
+    const proj1Ref = useScrollAnimation();
+    const proj2Ref = useScrollAnimation();
+    const proj3Ref = useScrollAnimation();
 
     return (
         <section className="section projects" id="projects">
@@ -37,12 +83,7 @@ export function Projects() {
                 </div>
                 <div className="projects-grid">
                     {/* Project 1 */}
-                    <div 
-                        className="project-card glass-card tilt-card animate-on-scroll" 
-                        ref={proj1Ref}
-                        onMouseMove={handleMouseMove}
-                        onMouseLeave={handleMouseLeave}
-                    >
+                    <TiltCard animationRef={proj1Ref}>
                         <div className="project-card-header">
                             <div className="project-icon"><ChartLineUp weight="fill" size={24} /></div>
                             <div className="project-links">
@@ -64,15 +105,10 @@ export function Projects() {
                             <span>Material UI</span>
                             <span>SQL Server</span>
                         </div>
-                    </div>
+                    </TiltCard>
 
                     {/* Project 2 */}
-                    <div 
-                        className="project-card glass-card tilt-card animate-on-scroll" 
-                        ref={proj2Ref}
-                        onMouseMove={handleMouseMove}
-                        onMouseLeave={handleMouseLeave}
-                    >
+                    <TiltCard animationRef={proj2Ref}>
                         <div className="project-card-header">
                             <div className="project-icon"><GraduationCap weight="fill" size={24} /></div>
                             <div className="project-links">
@@ -94,15 +130,10 @@ export function Projects() {
                             <span>CQRS</span>
                             <span>Migration</span>
                         </div>
-                    </div>
+                    </TiltCard>
 
                     {/* Project 3 */}
-                    <div 
-                        className="project-card glass-card tilt-card animate-on-scroll" 
-                        ref={proj3Ref}
-                        onMouseMove={handleMouseMove}
-                        onMouseLeave={handleMouseLeave}
-                    >
+                    <TiltCard animationRef={proj3Ref}>
                         <div className="project-card-header">
                             <div className="project-icon"><CreditCard weight="fill" size={24} /></div>
                             <div className="project-links">
@@ -122,7 +153,7 @@ export function Projects() {
                             <span>Webhooks</span>
                             <span>ASP.NET Core</span>
                         </div>
-                    </div>
+                    </TiltCard>
                 </div>
             </div>
         </section>
