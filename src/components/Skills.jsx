@@ -8,6 +8,7 @@ export function Skills() {
     const group3Ref = useScrollAnimation();
     const group4Ref = useScrollAnimation();
     const group5Ref = useScrollAnimation();
+    const group6Ref = useScrollAnimation();
 
     return (
         <section className="section skills" id="skills">
@@ -66,35 +67,46 @@ export function Skills() {
                         </div>
                     </div>
 
-                    {/* Database & Security */}
+                    {/* Database */}
                     <div className="skill-group glass-card animate-on-scroll" ref={group4Ref}>
                         <div className="skill-group-header">
                             <div className="skill-group-icon"><HardDrives weight="fill" size={24} /></div>
-                            <h3 className="skill-group-title">Database & Security</h3>
+                            <h3 className="skill-group-title">Database</h3>
                         </div>
                         <div className="skill-tags">
-                            <span className="skill-tag accent">SQL Server</span>
-                            <span className="skill-tag accent">SSMS</span>
-                            <span className="skill-tag accent">JWT Auth</span>
-                            <span className="skill-tag accent">Google OAuth</span>
+                            <span className="skill-tag">SQL Server</span>
+                            <span className="skill-tag">SSMS</span>
                         </div>
                     </div>
 
-                    {/* Cloud & Architecture */}
+                    {/* Cloud & Tools */}
                     <div className="skill-group glass-card animate-on-scroll" ref={group5Ref}>
                         <div className="skill-group-header">
                             <div className="skill-group-icon"><Cloud weight="fill" size={24} /></div>
-                            <h3 className="skill-group-title">Architecture & Tools</h3>
+                            <h3 className="skill-group-title">Cloud & Tools</h3>
                         </div>
                         <div className="skill-tags">
-                            <span className="skill-tag">Clean Architecture</span>
-                            <span className="skill-tag">CQRS</span>
-                            <span className="skill-tag">SOLID</span>
                             <span className="skill-tag">Azure Functions</span>
                             <span className="skill-tag">Blob Storage</span>
-                            <span className="skill-tag">Docker</span>
-                            <span className="skill-tag">Git / GitHub</span>
-                            <span className="skill-tag">Postman / Swagger</span>
+                            <span className="skill-tag">Postman</span>
+                            <span className="skill-tag">Swagger</span>
+                        </div>
+                    </div>
+
+                    {/* Architecture & DevOps */}
+                    <div className="skill-group glass-card animate-on-scroll" ref={group6Ref}>
+                        <div className="skill-group-header">
+                            <div className="skill-group-icon"><Wrench weight="fill" size={24} /></div>
+                            <h3 className="skill-group-title">Architecture & DevOps</h3>
+                        </div>
+                        <div className="skill-tags">
+                            <span className="skill-tag accent">Clean Architecture</span>
+                            <span className="skill-tag accent">CQRS</span>
+                            <span className="skill-tag accent">SOLID</span>
+                            <span className="skill-tag accent">JWT Auth</span>
+                            <span className="skill-tag accent">Google OAuth</span>
+                            <span className="skill-tag accent">Docker</span>
+                            <span className="skill-tag accent">Git / GitHub</span>
                         </div>
                     </div>
                 </div>
