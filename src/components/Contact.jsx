@@ -17,10 +17,6 @@ export function Contact() {
     const [loading, setLoading] = useState(false);
     const [toast, setToast] = useState(null);
 
-    const EMAILJS_PUBLIC_KEY = 'bdu1iU8D-vhuI8bub';
-    const EMAILJS_SERVICE_ID = 'service_joo3i1k';
-    const EMAILJS_TEMPLATE_ID = 'template_ouzh1ee';
-
     const handleChange = (e) => {
         setFormData(prev => ({
             ...prev,
@@ -33,32 +29,38 @@ export function Contact() {
         setTimeout(() => setToast(null), 3000);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
 
-        const templateParams = {
+        const payload = {
             name: formData.name,
             email: formData.email,
             subject: formData.subject,
-            message: formData.message,
-            time: new Date().toLocaleString()
+            message: formData.message
         };
 
-        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, {
-            publicKey: EMAILJS_PUBLIC_KEY,
-        })
-        .then(() => {
-            showToast('Message sent successfully! I will get back to you soon. ✉️');
-            setFormData({ name: '', email: '', subject: '', message: '' });
-        })
-        .catch((error) => {
-            console.error('EmailJS Error:', error);
+        try {
+            const response = await fetch('http://localhost:5000/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok) {
+                showToast('Message sent successfully! I will get back to you soon. ✉️');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+            } else {
+                throw new Error('API returned an error');
+            }
+        } catch (error) {
+            console.error('Contact Form Error:', error);
             showToast('⚠️ Failed to send message. Please email me directly at abidrather40@yahoo.in');
-        })
-        .finally(() => {
+        } finally {
             setLoading(false);
-        });
+        }
     };
 
     return (
